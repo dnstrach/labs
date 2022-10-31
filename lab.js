@@ -6,18 +6,14 @@
 
 //Code here
 
-// PSEUDOCODE:
-// follow object format
-// declare object with let or const
-// name the object
-// set it equal to its keys and values
-// bracket --> key --> : --> value --> ,
-
-
 let me = {
-  name: "Dom",
-  age: 25
-}
+  'name': 'Dom',
+  'age': '25,'
+};
+
+console.log(me)
+
+
 
 
 
@@ -31,11 +27,11 @@ let me = {
 //Code here
 
 
-let dog = {
-  name: 'Ava',
-  color: 'brown and white',
-  age: 7,
-  goodGirl: true
+let Ava = {
+  'name': 'Ava',
+  'color': 'brown',
+  'age': 7,
+  goodgirl: true,
 }
 
 
@@ -45,14 +41,10 @@ let dog = {
 
 //Code here
 
-// console.log(dog)
-// will print the keys and values inside of object with bracket notation
-
-// PSEUDOCODE 
+// console.log(dog) will print the keys and values inside of object with bracket notation
 // console.log(objectName.key)
 
 console.log(dog.name)
-//will print dog's name
 
 
 
@@ -65,7 +57,6 @@ console.log(dog.name)
 //console.log(objectName['value'])
 
 console.log(dog['name'])
-//will print dog's name
 
 
 
@@ -93,7 +84,7 @@ let favoriteThings = {
 
 //Code here
 
-//PSEUDOCODE 
+//NOTE
 //adding new key value into the object
 //objectName.key = 'value'
 //log the name of object to check if it was added
@@ -107,6 +98,7 @@ favoriteThings['show'] = 'Vampire Diaries'
 console.log(favoriteThings)
 
 
+
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
@@ -114,10 +106,10 @@ console.log(favoriteThings)
 
 //Code here
 
-//PSEUDOCODE
+//NOTE
 //Add and replace keyvalue 
 //use bracket or dot notation
-// need name of object, what you're replacing
+//need name of object, what you're replacing
 
 favoriteThings.food = 'Chicken Nuggets'
 favoriteThings['book'] = 'Harry Potter'
@@ -143,14 +135,14 @@ var carDetails = {
 */
 
 //Code Here
+const {color, make, model, year} = car
 
 //PSEUDOCODE
 //step 1 in destructuring 
-//delcare {key, key, key, key} = variableName
+//delcare {key, key, key, key} = value/variableName
 
 // const {color, make, model, year} = car
 // console.log(car) --> NOT defined 
-
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -175,6 +167,7 @@ function greeting( obj ) {
 //Destructure the object to save object properties into new variables 
 //Properties are firstName, lastName, and title
 // save properties into obj variable 
+
 
 
 
@@ -218,7 +211,7 @@ function totalPopulation (obj){
 
 //PSEUDOCODE
 //set function
-//destructure function to contain key properties which will be placed in a variable 
+//destructure function to contain key properties which will be placed in a variable, variable can be called obj system knows its different from obj in outer scope 
 //return sum 
 
 //Code Here
@@ -248,7 +241,8 @@ var user = {
 */
 
 //PSEUDOCODE
-//use user keyword property?: value.object = new value
+//change username and email in object
+//use user keyword property/method: value.object = new value
 //log object to check
 
 //Code Here
@@ -264,6 +258,7 @@ console.log(user)
 */
 
 //PSEUDOCODE
+//keyword object.value
 //deleteKeyword objectName.value
 
 //Code Here
@@ -283,8 +278,9 @@ console.log(user)
 //follow class format: class className {}
 // inside {} contains constructor (allows you to assign data to keys/values), (parameters), and this.key = value;
 //keep value as a variable so class can receive different kinds of cats
-//create a cat variable that will contain classifications by declaring the variable let = newKeyword classificationName(value, value, value
-//log cat variable --> Cat { name: 'Boo', age: 9, color: 'grey' }
+//create a cat variable that will contain classifications by declaring the variable let variableName = newKeyword classificationName(value, value, value)
+//log cat variable  //Cat { name: 'Boo', age: 9, color: 'grey' }
+
 
 //Code here
 class Cat {
@@ -318,19 +314,24 @@ console.log(Boo)
 
 //Code here
 class Wizard {
-  constructor(name, age, favoriteSpell){
-    this.name = name 
+  constructor(name, age, favoriteSpell){  //constructor invokes class
+    this.name = name                      //key/value format for class
     this.age = age
     this.favoriteSpell = favoriteSpell
   }
 
-  castSpell(){
-    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  castSpell(){  //do not have to include function keyword
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)  
   }
 }
 
-let oz = new Wizard('oz', 20, 'poof')
-oz.castSpell()
+let oz = new Wizard('oz', 20, 'a spell')   //creating wizard with its values
+oz.castSpell()                          //invoking castSpell function within class
+console.log(oz)
+
+// oz has cast a spell
+// Wizard { name: 'oz', age: 20, favoriteSpell: 'a spell' }
+
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -383,7 +384,30 @@ class Phone {
   }
 }
 
-  
+let newPhone1 = new Phone('apple', '8')   
+newPhone1.sell()                          
+console.log(newPhone1)
+// apple 8 has been sold
+// Phone {
+//   brand: 'apple',
+//   model: '8',
+//   storage: undefined,
+//   color: undefined,
+//   price: undefined,
+//   sold: true
+
+let newPhone2 = new Phone('apple', '$200')   
+newPhone2.changePrice()                          
+console.log(newPhone2)
+// apple 8 has been sold
+// Phone {
+//   brand: 'apple',
+//   model: '$200',
+//   storage: undefined,
+//   color: undefined,
+//   price: undefined,
+//   sold: false
+
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -395,6 +419,7 @@ class Phone {
 */
 
 //PSEUDOCODE 
+//creating new phone to be added into class
 //delcare phone variable to be plugged into class which will enter class .Keys = value, methodSell() and methodPrice()
 //phone variable will equal new Phone (value classifications)
 
@@ -449,6 +474,10 @@ const colors = {
 }
 //do not edit this object
 
+//NOTE
+//Define spread operator: It takes in an iterable (e.g an array) and expands it into individual elements. The spread operator is commonly used to make shallow copies of JS objects. Using this operator makes the code concise and enhances its readability.
+//. . . 
+
 //Code Here 
 
 
@@ -496,6 +525,8 @@ const shippingInfo = {
   Inside the function, add the number of miles to the object's mileage.
   And finally, print the value of the mileage.
 */
+
+//NOTE method()
 
 //Code Here 
 class Vehicle {
