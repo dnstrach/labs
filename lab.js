@@ -1,7 +1,8 @@
 //////////////////////////// PROBLEM 1 ////////////////////////////
 /*
   Create an object called me.
-  Give it a key of name with the value being your name, and another key of age with the value being your age.
+  Give it a key of name with the value being your name, and another key 
+  of age with the value being your age.
 */
 
 //Code here
@@ -13,7 +14,7 @@ let me = {
 
 console.log(me)
 
-
+//{ name: 'Dom', age: '25,' }
 
 
 
@@ -27,11 +28,11 @@ console.log(me)
 //Code here
 
 
-let Ava = {
+let dog = {
   'name': 'Ava',
   'color': 'brown',
   'age': 7,
-  goodgirl: true,
+  goodgirl: true
 }
 
 
@@ -41,7 +42,6 @@ let Ava = {
 
 //Code here
 
-// console.log(dog) will print the keys and values inside of object with bracket notation
 // console.log(objectName.key)
 
 console.log(dog.name)
@@ -100,8 +100,11 @@ console.log(favoriteThings)
 
 
 /*
-  Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
-  and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
+  Now use bracket or dot notation to change the value of the food key 
+  in your favoriteThings object to be 'Chicken Nuggets'
+  and change the value of the book key in your favoriteThings object 
+  to be 'Harry Potter'. (If they were either of those things already, 
+  change them to something else.)
 */
 
 //Code here
@@ -131,7 +134,8 @@ var carDetails = {
 // Do not edit the code above.
 
 /*
-  Use object destructuring to save the property values from the object carDetails into new variables. 
+  Use object destructuring to save the property values from the object carDetails 
+  into new variables. 
 */
 
 //Code Here
@@ -160,15 +164,6 @@ function greeting( obj ) {
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-
-//The function name greeting only receives objects and returns a statement containing strings and variables
-
-//PSEUDOCODE
-//Destructure the object to save object properties into new variables 
-//Properties are firstName, lastName, and title
-// save properties into obj variable 
-
-
 
 
 
@@ -207,18 +202,13 @@ function totalPopulation (obj){
   Push these new variables to an array and return the array. 
 */
 
-// Note: same concept as problem 9 except function will be receiving strings and returning an array
-
-//PSEUDOCODE
-//set function
-//destructure function to contain key properties which will be placed in a variable, variable can be called obj system knows its different from obj in outer scope 
-//return sum 
-
 //Code Here
 function ingredients (obj){
   const {carb, fat, protein} = obj
-  return carb + fat + protein
+  return [carb, fat, protein]
 }
+
+
 
 
 
@@ -239,11 +229,6 @@ var user = {
   name -> 'Bryan G. Smith' and email -> 'bryan.smith@devmounta.in'.
   Make that change without modifying the original object code above.
 */
-
-//PSEUDOCODE
-//change username and email in object
-//use user keyword property/method: value.object = new value
-//log object to check
 
 //Code Here
 user.name = 'Bryan G. Smith'
@@ -320,17 +305,14 @@ class Wizard {
     this.favoriteSpell = favoriteSpell
   }
 
-  castSpell(){  //do not have to include function keyword
+  castSpell(){  
     console.log(`${this.name} has cast ${this.favoriteSpell}`)  
   }
 }
 
 let oz = new Wizard('oz', 20, 'a spell')   //creating wizard with its values
-oz.castSpell()                          //invoking castSpell function within class
-console.log(oz)
-
-// oz has cast a spell
-// Wizard { name: 'oz', age: 20, favoriteSpell: 'a spell' }
+oz.castSpell()                            //invoking castSpell function within class
+ 
 
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
@@ -338,7 +320,8 @@ console.log(oz)
     Write a class called Phone. We'll use it as if we were creating
     phone objects to keep track of inventory using an app.
 
-    Phone will build phone objects with brand, model, storage, color, price, and sold properties.
+    Phone will build phone objects with brand, model, storage, color, price, 
+    and sold properties.
 
     Write a constructor that sets those values -- all of the values 
     should come from the constructors parameters except sold, which
@@ -347,7 +330,8 @@ console.log(oz)
     and it won't be sold yet. 
 
     Create a method called 'sell'.
-    sell should be a function that changes the value of sold to true and prints the string: '{brand} {model} has been sold.'
+    sell should be a function that changes the value of sold to true and prints 
+    the string: '{brand} {model} has been sold.'
     
     Create another method called 'changePrice'. We can use this 
     to change the price in case a phone isn't selling.
@@ -463,7 +447,10 @@ console.log(phoneTwo)
 /*
   Use the spread operator to create a copy of the colors object below.
   Store the copy in a variable called colorsCopy.
-  Note: We did not cover the spread operator in class. We do not expect you to know how to use it. Challenge yourself by going online and researching what the spread operator is and how to use it.
+  Note: We did not cover the spread operator in class. 
+  We do not expect you to know how to use it. 
+  Challenge yourself by going online and researching 
+  what the spread operator is and how to use it.
 */
 
 //do not edit this object
@@ -476,9 +463,10 @@ const colors = {
 
 //NOTE
 //Define spread operator: It takes in an iterable (e.g an array) and expands it into individual elements. The spread operator is commonly used to make shallow copies of JS objects. Using this operator makes the code concise and enhances its readability.
-//. . . 
+//{...objectName} 
 
 //Code Here 
+const colorsCopy = {...colors}
 
 
 
@@ -509,6 +497,21 @@ const shippingInfo = {
 
 //Code Here
 //spread operator is a quick way to copy arrays/objects into another array/object
+
+const helensInfo = {...contactInfo, ...shippingInfo}
+// {
+//   firstName: 'Helen',
+//   lastName: 'Parr',
+//   phoneNumber: 1234445555,
+//   email: 'helen@mymail.com',
+//   street: '100 E. Main Street',
+//   city: 'Anytown',
+//   state: 'AZ',
+//   zipCode: 85004
+// }
+
+console.log(helensInfo)
+
 
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
